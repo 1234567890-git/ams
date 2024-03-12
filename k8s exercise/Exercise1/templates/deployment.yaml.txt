@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: friendly-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: friendly-app
+  template:
+    metadata:
+      labels:
+        app: friendly-app
+    spec:
+      containers:
+      - name: friendly-app
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 80

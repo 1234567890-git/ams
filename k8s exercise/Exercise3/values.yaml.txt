@@ -1,0 +1,16 @@
+image:
+  repository: friendly-app
+  tag: 1.0.2
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  host: friendly-app.domain.com
+
+mysql:
+  enabled: true
+  rootPassword: Password

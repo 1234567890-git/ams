@@ -1,0 +1,16 @@
+image:
+  repository: friendly-app
+  tag: 1.0.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  host: friendly-app.domain.com
+
+persistentVolume:
+  enabled: true
+  size: 1Gi
